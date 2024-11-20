@@ -21,6 +21,7 @@ body {
   padding-top: 62px; /* Same height as the navbar */
   scroll-margin-top: 62px; /* Ensure smooth scrolling stops correctly above the section */
 }
+
 #nav {
   width: 100%;
   height: 62px;
@@ -58,7 +59,7 @@ body {
   font-weight: bold;
   font-size: x-large;
 }
-.portfolio span {
+span {
   color: #eab308;
 }
 
@@ -108,12 +109,12 @@ li a:hover {
 .welcome-txt p:nth-of-type(1) {
   color: #eab308;
 }
-.welcome-txt p:nth-of-type(2) {
+.welcome-txt h1:nth-of-type(1) {
   font-size: xx-large;
   padding-top: 50px;
 }
 
-.welcome-txt p:nth-of-type(3) {
+.welcome-txt p:nth-of-type(2) {
   padding-top: 15px;
   color: #6b7280;
 }
@@ -122,15 +123,19 @@ li a:hover {
   border-radius: 8%;
 }
 
-.project-con {
+#project-con {
   width: 100%;
   height: 100vh;
+  /* border: white 1px solid; */
+  padding-top: 90px;
+  text-align: center;
 }
 
 .contact-con {
   width: 100%;
   height: 100vh;
   background-color: #111827;
+  text-align: center;
 }
 
 /* .project-con,
@@ -178,3 +183,175 @@ li a:hover {
   max-width: 800px;
   margin: 0 auto;
 } */
+
+h2 {
+  color: white;
+  text-align: center;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 20px 400px;
+  /* border: white 1px solid; */
+}
+
+.project-tile {
+  display: flex;
+  flex-direction: column; /* Ensures the image is above the text */
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Centers text */
+  padding: 10px;
+  border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds some shadow */
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.project-tile h3 {
+  margin-top: 10px; /* Adds space between the image and the text */
+  font-size: 1.2rem;
+  color: #333; /* Adjust the text color as needed */
+}
+
+a {
+  color: white;
+}
+
+.contact-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.con-con {
+  display: flex;
+  justify-content: space-between;
+  padding: 200px 450px;
+}
+
+.con-con a {
+  font-size: x-large;
+}
+
+.btn-contact {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out;
+}
+
+footer {
+  color: white;
+}
+
+.btn-contact:hover {
+  transform: translateY(2px) scale(1.3); /* Move the button 5px down on hover */
+}
+
+@media (max-width: 640px) {
+  #nav {
+    padding: 0px 10px;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding: 40px 50px;
+
+    /* border: white 1px solid; */
+  }
+  #project-con {
+    height: auto;
+  }
+
+  .nav-list {
+    font-size: small;
+  }
+
+  .welcome-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  #welcome {
+    padding: 0px 20px;
+  }
+  .welcome-txt {
+    margin-right: 50px;
+  }
+
+  /* .contact-con {    
+    padding: 0px 10px;
+    height: auto;
+    text-align: center;
+    margin: auto;
+  } */
+  .con-con {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0px;
+  }
+  .con-con a {
+    font-size: small;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 100px 100px;
+  }
+
+  #nav {
+    padding: 0px 50px;
+  }
+  #project-con {
+    height: auto;
+  }
+
+  .project-img {
+    width: 100%;
+    max-width: auto;
+    max-height: auto;
+  }
+
+  #welcome {
+    padding: 0px 50px;
+  }
+
+  .welcome-txt {
+    margin-right: 50px;
+  }
+
+  .con-con {
+    padding: 100px 50px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1450px) {
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 0px 100px;
+  }
+}
